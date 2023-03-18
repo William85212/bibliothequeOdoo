@@ -26,6 +26,9 @@
     'data': [
         'security/ir.model.access.csv',
         'views/book.xml',
+        'views/bibliotheque.xml',
+        'views/etageres.xml',
+        'views/piece.xml',
     ],
 
     'images': ['static/description/icon.png'],
