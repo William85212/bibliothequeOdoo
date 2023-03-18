@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+
+		<record id="bibliotheque_model_tree_view" model="ir.ui.view">
+			<!--id a choisir soit même-->
+			<field name="name">bibliotheque.tree</field>
+			<!--name a choisir soit même-->
+			<field name="model">bc_bib.bibliotheque</field>
+			<!--nom du module.nom model python-->
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Piece">
+
+					<field name="bibliothequeName"/>
+
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="bibliotheque_model_action" model="ir.actions.act_window">
+			<field name="name">Bibliotheque</field>
+			<field name="res_model">bc_bib.bibliotheque</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+		<menuitem id="bibliotheque" name="Bibliotheque" action="bibliotheque_model_action" parent="menu_root"/>
+	</data>
+</odoo>

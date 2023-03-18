@@ -6,3 +6,9 @@ class bibliotheque(models.Model):
     _name = "bc_bib.bibliotheque"
     _description="bibli"
 
+    bibliothequeName = fields.Char(
+        string="title",
+        require="True",
+        help="Nom de la bilbiotheques",
+        index="True"
+    )

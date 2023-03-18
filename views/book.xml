@@ -21,12 +21,14 @@
 			<field name="res_model">bc_bib.book</field>
 			<field name="view_mode">tree,form</field>
 		</record>
+
 		
-		
-		
+
+
 		<!--id à difinir soit même, name également, web icone = icone-->
 		<menuitem id="menu_root" name="Book" web_icon='bc_bib,static/description/icon.png'/>
 		<menuitem id="menu_book" name="Book" action="book_model_action" parent="menu_root"/>
+		
 
 	</data>
 </odoo>

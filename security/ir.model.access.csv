@@ -1,2 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 bc_bib.access_bc_bib_book,access_bc_bib_book,bc_bib.model_bc_bib_book,base.group_user,1,1,1,1
+
+bc_bib.access_bc_bib_bibliotheque,access_bc_bib_bibliotheque,bc_bib.model_bc_bib_bibliotheque,base.group_user,1,1,1,1
+bc_bib.access_bc_bib_etageres,access_bc_bib_etageres,bc_bib.model_bc_bib_etageres,base.group_user,1,1,1,1
+bc_bib.access_bc_bib_piece,access_bc_bib_piece,bc_bib.model_bc_bib_piece,base.group_user,1,1,1,1
