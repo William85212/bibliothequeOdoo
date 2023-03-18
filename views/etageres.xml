@@ -2,5 +2,30 @@
 <odoo>
 	<data>
 
+		<record id="etageres_model_tree_view" model="ir.ui.view">
+			<!--id a choisir soit même-->
+			<field name="name">etageres.tree</field>
+			<!--name a choisir soit même-->
+			<field name="model">bc_bib.etageres</field>
+			<!--nom du module.nom model python-->
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Etageres">
+
+					<field name="etagereName"/>
+
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="etageres_model_action" model="ir.actions.act_window">
+			<field name="name">Etageres</field>
+			<field name="res_model">bc_bib.etageres</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+		<menuitem id="etageres" name="Etageres" action="etageres_model_action" parent="menu_root"/>
 	</data>
 </odoo>
