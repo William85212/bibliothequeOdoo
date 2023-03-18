@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+		<record id="book_model_tree_view" model="ir.ui.view"><!--id a choisir soit même-->
+			<field name="name">book.tree</field><!--name a choisir soit même-->
+			<field name="model">bc_bib.book</field><!--nom du module.nom model python-->
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Book">
+
+					<field name="title"/><!--name est le nom du champ dans le model-->
+					<field name="descriptionLivres"/><!--name est le nom du champ dans le model-->
+					
+
+				</tree>
+			</field>
+		</record>
+
+		<record id="book_model_action" model="ir.actions.act_window">
+			<field name="name">Book</field>
+			<field name="res_model">bc_bib.book</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		
+		
+		<!--id à difinir soit même, name également, web icone = icone-->
+		<menuitem id="menu_root" name="Book" web_icon='bc_bib,static/description/icon.png'/>
+		<menuitem id="menu_book" name="Book" action="book_model_action" parent="menu_root"/>
+
+	</data>
+</odoo>
