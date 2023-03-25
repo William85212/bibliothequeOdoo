@@ -1,4 +1,5 @@
 from importlib.metadata import requires
+from models.bibliotheque import bibliotheque
 from odoo import fields, models
 
 
@@ -19,4 +20,21 @@ class book(models.Model):
         help="Description du livre",
         index="True"
     )
+
+    etageresId = fields.Many2one(
+        comodel_name="bc_bib.etageres", 
+        string="fk_etageres"
+    )
+
+    bibliothequeId = fields.Many2one(
+        comodel_name="bc_bib.bibliotheque", 
+        string="fk_bibliotheque"
+    )
+
+    pieceId = fields.Many2one(
+        comodel_name="bc_bib.piece", 
+        string="fk_piece"
+    )
+
+
 
