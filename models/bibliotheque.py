@@ -12,7 +12,7 @@ class bibliotheque(models.Model):
         help="Nom de la bilbiotheques",
         index="True"
     )
-
+    
 
     piece_id = fields.Many2one(
         comodel_name="bc_bib.piece", 
