@@ -12,9 +12,18 @@ class bibliotheque(models.Model):
         help="Nom de la bilbiotheques",
         index="True"
     )
-    
 
     piece_id = fields.Many2one(
-        comodel_name="bc_bib.piece", 
-        string="fk_piece"
+    comodel_name="bc_bib.piece", 
+    iverse_name="namePiece",
+    string="namePiece"
     )
+    
+    idsetageres = fields.One2many(
+        comodel_name="bc_bib.etageres",
+        inverse_name="bibliothequeId",
+        string="etageres"
+    )
+
+
+

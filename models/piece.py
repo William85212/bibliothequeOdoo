@@ -14,5 +14,13 @@ class bibliotheque(models.Model):
         index = "True"
     )
 
+    ids_piece = fields.One2many(
+        comodel_name="bc_bib.bibliotheque",
+        inverse_name="piece_id",
+        string="bibliotheque"
+    )
+
+
+
     
 

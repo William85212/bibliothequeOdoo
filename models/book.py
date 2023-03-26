@@ -20,6 +20,11 @@ class book(models.Model):
         index="True"
     )
 
+
+
+
+    #
+
     pieceId = fields.Many2one(
         comodel_name="bc_bib.piece", 
         string="Piece"
