@@ -15,7 +15,9 @@ class bibliotheque(models.Model):
         index="True"
     )
 
-    nombresLivres = fields.Float(compute="_compute_total")
+    nombresLivres = fields.Float(
+        compute="_compute_total"
+    )
 
 
     pieceId = fields.Many2one(
@@ -37,7 +39,7 @@ class bibliotheque(models.Model):
     @api.depends("nombresLivres")
     def _compute_total(self):
         for record in self:
-            record.total = 2.0 * record.amount
+            self.nombresLivres = len(record.idsBooks)
             
 
 

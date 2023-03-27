@@ -14,8 +14,8 @@
 
 					<field name="namePiece"/>
 					<field name="bibliothequeCount"/>
-					<!--<field name="etageresCount"/>
-					<field name="livresCount"/>-->
+					<field name="etageresCount"/>
+					<field name="livre"/>
 					
 	
 				</tree>

@@ -14,6 +14,8 @@
 
 					<field name="bibliothequeName"/>
 					<field name="piece_id"/>
+					<field name="etageres"/>
+					<field name="livres"/>
 				</tree>
 			</field>
 		</record>

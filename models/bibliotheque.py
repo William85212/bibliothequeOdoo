@@ -13,10 +13,19 @@ class bibliotheque(models.Model):
         index="True"
     )
 
+    etageres = fields.Float(
+            
+    )
+
+    livres = fields.Float(
+        
+    )
+
+
+    #Many2one & One2Many  
     piece_id = fields.Many2one(
-    comodel_name="bc_bib.piece", 
-    iverse_name="namePiece",
-    string="namePiece"
+        comodel_name="bc_bib.piece", 
+        string="namePiece"
     )
     
     idsetageres = fields.One2many(
