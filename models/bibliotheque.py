@@ -48,25 +48,11 @@ class bibliotheque(models.Model):
         for bibliotheque in self:
             bibliotheque.etageres = len(bibliotheque.idsetageres)
 
-    @api.depends("idsetageres")
+    @api.depends("idsetageres", "idsetageres.idsBooks")
     def _compute_livres(self):
         for bibliotheque in self:
-            bibliotheque.livres = len(bibliotheque.idsetageres)
+            bibliotheque.livres = len(bibliotheque.idsetageres.mapped("idsBooks"))
 
-
-    ##function 
-    #@api.depends("etageres")
-    #def compute_etageres(self):
-    #    for etagere in self:
-    #        self.etageres = 
-
-    #@api.depends("livres")
-    #def _compute_livres(self):
-    #    for biblio in self:
-    #        total_livres = 0
-    #        for etagere in biblio.idsetageres:
-    #            total_livres += len(etagere.idslivres)
-    #        biblio.livres = total_livres
 
   
 

@@ -14,12 +14,13 @@ class bibliotheque(models.Model):
         index = "True"
     )
 
+    #Champs calculé
     bibliothequeCount = fields.Float(
         compute="_compute_piece"
     )
 
     etageresCount = fields.Float(
-       # compute="_compute_etageres",
+       compute="_compute_etageres",
 
     )
 
@@ -35,15 +36,15 @@ class bibliotheque(models.Model):
     )
 
     ##function 
-    #@api.depends("bibliothequeCount")
-    #def _compute_bibliotheque(self):
-    #    for piece in self:
-    #        self.bibliothequeCount = len(piece.ids_piece)
-
     @api.depends("ids_piece")
     def _compute_piece(self):
         for piece in self:
             piece.bibliothequeCount = len(piece.ids_piece)
+
+    @api.depends("ids_piece", "ids_piece.idsetageres")
+    def _compute_etageres(self):
+        for piece in self:
+            piece.etageresCount = len(piece.ids_piece.mapped("idsetageres"))
 
 
     
