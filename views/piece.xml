@@ -13,7 +13,10 @@
 				<tree string="Piece">
 
 					<field name="namePiece"/>
-				
+					<field name="bibliothequeCount"/>
+					<!--<field name="etageresCount"/>
+					<field name="livresCount"/>-->
+					
 	
 				</tree>
 			</field>
