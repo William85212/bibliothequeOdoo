@@ -8,7 +8,7 @@ class bibliotheque(models.Model):
 
     bibliothequeName = fields.Char(
         string="title",
-        require="True",
+        required="True",
         help="Nom de la bilbiotheques",
         index="True"
     )
@@ -25,7 +25,8 @@ class bibliotheque(models.Model):
     #Many2one & One2Many  
     piece_id = fields.Many2one(
         comodel_name="bc_bib.piece", 
-        string="namePiece"
+        string="namePiece",
+        required="True"
     )
     
     idsetageres = fields.One2many(

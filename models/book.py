@@ -8,36 +8,25 @@ class book(models.Model):
     #champ de la tables-->
     title = fields.Char( 
         string="title",
-        require="True",
+        required="True",
         help="Le titre du livre",
         index="True"
     )
 
     descriptionLivres = fields.Char(
         string="description",
-        require="True",
+        required="True",
         help="Description du livre",
         index="True"
     )
 
-
-
-
-    #
-
-    pieceId = fields.Many2one(
-        comodel_name="bc_bib.piece", 
-        string="Piece"
-    )
-
-    bibliothequeId = fields.Many2one(
-        comodel_name="bc_bib.bibliotheque", 
-        string="bibliotheque"
-    )
+ 
 
     etageresId = fields.Many2one(
         comodel_name="bc_bib.etageres", 
-        string="Etageres"
+        string="Etageres",
+        required="True"
+
     )
 
     

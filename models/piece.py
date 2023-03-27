@@ -9,7 +9,7 @@ class bibliotheque(models.Model):
 
     namePiece = fields.Char(
         name="namePiece",
-        require= "True",
+        required= "True",
         help="le nom de la piece", 
         index = "True"
     )

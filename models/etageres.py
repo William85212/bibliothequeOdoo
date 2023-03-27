@@ -10,7 +10,7 @@ class bibliotheque(models.Model):
 
     etagereName = fields.Char(
         string="title",
-        require="True",
+        required="True",
         help="coucou bhou",
         index="True"
     )
@@ -20,19 +20,20 @@ class bibliotheque(models.Model):
     )
 
 
-    pieceId = fields.Many2one(
-        comodel_name="bc_bib.piece", 
-        string="Piece"
-    )
+    #pieceId = fields.Many2one(
+    #    comodel_name="bc_bib.piece", 
+    #    string="Piece"
+    #)
 
     bibliothequeId = fields.Many2one(
         comodel_name="bc_bib.bibliotheque",
-        string="bibliotheque"
+        string="bibliotheque",
+        required="True"
     )
 
     idsBooks = fields.One2many(
         comodel_name="bc_bib.book",
-        inverse_name="title",
+        inverse_name="etageresId",
         string = "books"
     )
 

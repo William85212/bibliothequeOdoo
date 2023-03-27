@@ -10,7 +10,7 @@
 
 					<field name="title"/><!--name est le nom du champ dans le model-->
 					<field name="descriptionLivres"/><!--name est le nom du champ dans le model-->
-				    
+					<field name="etageresId"/>
 				</tree>
 			</field>
 		</record>

@@ -31,7 +31,7 @@
         'views/piece.xml',
     ],
 
-    'images': ['static/description/icon.png'],
+    'images': ['static/description/hello.png'],
 
     'application':True,
 }
