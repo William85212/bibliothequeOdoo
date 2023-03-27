@@ -37,10 +37,15 @@ class bibliotheque(models.Model):
         string = "books"
     )
 
-    @api.depends("nombresLivres")
+    #@api.depends("nombresLivres")
+    #def _compute_total(self):
+    #    for record in self:
+    #        self.nombresLivres = len(record.idsBooks)
+
+    @api.depends("idsBooks")
     def _compute_total(self):
-        for record in self:
-            self.nombresLivres = len(record.idsBooks)
+        for etagere in self:
+            etagere.nombresLivres = len(etagere.idsBooks)
             
 
 

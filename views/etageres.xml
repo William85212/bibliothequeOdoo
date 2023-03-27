@@ -13,8 +13,8 @@
 				<tree string="Etageres">
 
 					<field name="etagereName"/>
-					<field name ="nombresLivres"/>
-					 
+					<field name="nombresLivres"/>
+					<field name="bibliothequeId"/>
 				</tree>
 			</field>
 		</record>

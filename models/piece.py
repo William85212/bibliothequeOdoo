@@ -15,7 +15,7 @@ class bibliotheque(models.Model):
     )
 
     bibliothequeCount = fields.Float(
-        compute="_compute_bibliotheque"
+        compute="_compute_piece"
     )
 
     etageresCount = fields.Float(
@@ -34,17 +34,16 @@ class bibliotheque(models.Model):
         string="bibliotheque"
     )
 
-    #function 
-    @api.depends("bibliothequeCount")
-    def _compute_bibliotheque(self):
-        for piece in self:
-            self.bibliothequeCount = len(piece.ids_piece)
-
-    #@api.depends("etageresCount")
-    #def _compute_etageres(self):
+    ##function 
+    #@api.depends("bibliothequeCount")
+    #def _compute_bibliotheque(self):
     #    for piece in self:
-    #        for bibli in piece:
-    #            self.etageresCount = len(bibli.idsetageres)
+    #        self.bibliothequeCount = len(piece.ids_piece)
+
+    @api.depends("ids_piece")
+    def _compute_piece(self):
+        for piece in self:
+            piece.bibliothequeCount = len(piece.ids_piece)
 
 
     

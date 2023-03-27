@@ -1,5 +1,5 @@
 from importlib.metadata import requires 
-from odoo import fields, models 
+from odoo import api, fields, models 
 
 
 class bibliotheque(models.Model): 
@@ -14,11 +14,11 @@ class bibliotheque(models.Model):
     )
 
     etageres = fields.Float(
-            
+        compute="_compute_etageres"
     )
 
     livres = fields.Float(
-        
+        compute="_compute_livres"
     )
 
 
@@ -35,5 +35,39 @@ class bibliotheque(models.Model):
         string="etageres"
     )
 
+    @api.depends("idsetageres", "idsetageres.idsBooks")
+    def _compute_livres(self):
+        for bibliotheque in self:
+            print()
+            #bibliotheque.livres = sum(bibliotheque.idsetageres.mapped("idsBooks"))
+
+
+
+    @api.depends("idsetageres")
+    def _compute_etageres(self):
+        for bibliotheque in self:
+            bibliotheque.etageres = len(bibliotheque.idsetageres)
+
+    @api.depends("idsetageres")
+    def _compute_livres(self):
+        for bibliotheque in self:
+            bibliotheque.livres = len(bibliotheque.idsetageres)
+
+
+    ##function 
+    #@api.depends("etageres")
+    #def compute_etageres(self):
+    #    for etagere in self:
+    #        self.etageres = 
+
+    #@api.depends("livres")
+    #def _compute_livres(self):
+    #    for biblio in self:
+    #        total_livres = 0
+    #        for etagere in biblio.idsetageres:
+    #            total_livres += len(etagere.idslivres)
+    #        biblio.livres = total_livres
+
+  
 
 
