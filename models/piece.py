@@ -25,7 +25,7 @@ class bibliotheque(models.Model):
     )
 
     livre = fields.Float(
-        #compute="_compute_bibliotheque",
+        compute="_compute_livres",
     )
 
     #one2many & many2one
@@ -46,6 +46,11 @@ class bibliotheque(models.Model):
         for piece in self:
             piece.etageresCount = len(piece.ids_piece.mapped("idsetageres"))
 
-
-    
-
+   
+    @api.depends("ids_piece", "ids_piece.idsetageres", "ids_piece.idsetageres.idsBooks")
+    def _compute_livres(self):
+        for piece in self:
+            livres_count = 0
+            for etagere in piece.ids_piece.mapped("idsetageres"):
+                livres_count += len(etagere.idsBooks)
+            piece.livre = livres_count
