@@ -5,6 +5,7 @@ from odoo import api, fields, models
 class bibliotheque(models.Model): 
     _name = "bc_bib.bibliotheque"
     _description="bibli"
+    _rec_name= "bibliothequeName"
 
     bibliothequeName = fields.Char(
         string="title",
